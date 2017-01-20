@@ -1,2 +1,4 @@
-# book
-The haconiwa gitbook
+# The Haconiwa gitbook
+
+* [Japanese](./ja)
+* English
