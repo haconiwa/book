@@ -242,9 +242,7 @@ PID   USER     TIME   COMMAND
 
 ### シンプルな Web サーバーを起動する
 
-my-first-container でシンプルな Web サーバーを起動してみたいと思います.
-
-my-first-container.haco ファイルを以下のように変更します.
+my-first-container でシンプルな Web サーバーを起動する為, my-first-container.haco ファイルを以下のように変更します.
 
 ```diff
 --- my-first-container.haco.original    2017-05-04 00:01:46.724019010 +0000
