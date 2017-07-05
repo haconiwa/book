@@ -1,4 +1,4 @@
 # The Haconiwa gitbook
 
-* [Japanese](./ja)
+* [Japanese](./ja/)
 * English
