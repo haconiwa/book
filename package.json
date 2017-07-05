@@ -1,0 +1,27 @@
+{
+  "name": "haconiwa-book",
+  "version": "0.0.1",
+  "description": "The Haconiwa tutorial gitbook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haconiwa/book.git"
+  },
+  "keywords": [
+    "gitbook",
+    "container",
+    "haconiwa"
+  ],
+  "author": "Uchio KONDO <udzura@udzura.jp> (http://udzura.jp/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haconiwa/book/issues"
+  },
+  "homepage": "https://github.com/haconiwa/book#readme",
+  "dependencies": {
+    "gitbook": "^3.2.2"
+  }
+}
