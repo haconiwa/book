@@ -1,5 +1,7 @@
-build:
+buildtop:
 	gitbook build
+
+build:
 	sh -c 'cd ja && gitbook build'
 	cp -f -R ja/_book/ _book/ja/
 	find _book/ -name '*.md' | xargs rm
