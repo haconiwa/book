@@ -96,6 +96,22 @@ Invoke `haconiwa COMMAND -h' for details.
 `new` サブコマンドを指定して haconiwa を実行すると設定のひな形がカレントディレクトリに作成されます.
 
 ```sh
+$ haconiwa new my-first-container
+```
+
+コマンドを実行すると, 以下のように出力されます。
+
+```sh
+assign  new haconiwa name = haconiwa-0f3b030f
+assign  rootfs location = /var/lib/haconiwa/0f3b030f
+create  my-first-container.haco
+```
+
+コンテナ名と rootfs のパスについては自動的にデフォルト値が設定されます。
+
+また, 以下のように実行することで, 任意のコンテナ名と rootfs のパスを指定することが出来ます.
+
+```sh
 $ haconiwa new \
   --name=my-first-container \
   --root=/var/lib/haconiwa/my-first-container my-first-container.haco
@@ -184,7 +200,7 @@ Success!
 
 ## プロビジョニング
 
-設定ファイルを修正して, コンテナに Web サーバー (Apache) をインストールしてみます.
+設定ファイルを修正して, コンテナに Ruby パッケージをインストールしてみます.
 
 ```diff
 --- my-first-container.haco.old 2017-05-03 15:42:57.037536264 +0000
@@ -257,13 +273,13 @@ my-first-container でシンプルな Web サーバーを起動する為, my-fir
    # config.daemonize!
 ```
 
-変更後、`start` サブコマンドとひな型ファイルを指定し、新たに `--daemon` オプションを付けて haconiwa を実行します.
+変更後、`start` サブコマンドとひな型ファイルを指定し、新たに `--daemon` オプション又は `-D` オプションを付けて haconiwa を実行します.
 
 ```sh
 sudo haconiwa start my-first-container.haco --daemon
 ```
 
-以下のように出力され, my-first-container コンテナはデーモンモードで動作します. `pids` で出力されている番号はホスト側から見えるコンテナ root PID となります. 今後, この PID を指定してコンテナへのアクセスやコンテナの停止を行います.
+以下のように出力され, my-first-container コンテナはデーモンモードで動作します. `pids` で出力されている番号はホスト側から見えるコンテナ root PID となります. 今後, この PID を指定してコンテナへのアクセスやコンテナの停止を行います. 尚、デーモンモードで動かさない場合には, `--no-daemon` オプション又は `-T` オプションを付けて `haconiwa start` を実行します.
 
 ```sh
 pids: 16483
